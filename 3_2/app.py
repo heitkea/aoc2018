@@ -50,11 +50,24 @@ def findOverlap():
             if fabric[x,y] > 1:
                 overlapCuts += 1
 
+def testCuts():
+    global fabric
+    for cut in input: 
+        cutOverlaps = False
+        for x in range(cut.x, cut.x + cut.w):
+            for y in range(cut.y, cut.y + cut.h):
+                if fabric[x,y] > 1:
+                    cutOverlaps = True
+                    break
+            if cutOverlaps == True:
+                break
+        if cutOverlaps == False:
+            return cut.id
+
 hydrateInput()
 getFabricDimensions()
 cutFabric()
 findOverlap()
+print("\r\nNo overlap: " + testCuts() + "\r\n")
 
-print("Overlap cuts: " + str(overlapCuts))
-
-# try 1: 101781 correct!
+# try 1: 909 correct!
