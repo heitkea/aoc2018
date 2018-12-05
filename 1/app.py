@@ -1,15 +1,11 @@
-import datetime
-
-print(datetime.datetime.now())
-
 lines = open("data.txt", "r").read().splitlines()
 
-#global r, freqs, foundDuplicate
 r = 0
 freqs = [0]
 foundDuplicate = False
 
 def iterateChanges():
+    global r, freqs, foundDuplicate
     for s in lines:
         if s[0] == "+":
             r += int(s[1:])
@@ -26,9 +22,6 @@ def iterateChanges():
 while foundDuplicate == False:
     iterateChanges()
 
-print(datetime.datetime.now())
-
-    
 # Tries
 # -15 wrong
 # 245 correct!

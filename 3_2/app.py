@@ -64,10 +64,13 @@ def testCuts():
         if cutOverlaps == False:
             return cut.id
 
+
+
 hydrateInput()
 getFabricDimensions()
 cutFabric()
 findOverlap()
+
 print("\r\nNo overlap: " + testCuts() + "\r\n")
 
 # try 1: 909 correct!
